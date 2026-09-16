@@ -1,125 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gaming FF Sports</title>
+  <title>Join - Gaming FF Sports</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
     }
 
     body {
-      background: #0b1020;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #080d1d;
       color: white;
+      text-align: center;
     }
 
     header {
-      background: linear-gradient(135deg, #6c2cff, #00b7ff);
-      padding: 25px 15px;
-      text-align: center;
+      padding: 35px 15px;
+      background: linear-gradient(135deg, #6633ff, #00aaff);
     }
 
     header h1 {
-      font-size: 30px;
-      margin-bottom: 8px;
+      margin: 0;
+      font-size: 32px;
     }
 
-    header p {
-      font-size: 15px;
+    .box {
+      margin: 35px 20px;
+      padding: 30px 20px;
+      background: #151d36;
+      border: 1px solid #293866;
+      border-radius: 20px;
     }
 
-    .container {
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .welcome {
-      background: #151d35;
-      padding: 20px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      text-align: center;
-      border: 1px solid #29345a;
-    }
-
-    .welcome h2 {
-      color: #00c8ff;
-      margin-bottom: 10px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-
-    .card {
-      background: #151d35;
-      padding: 22px 10px;
-      border-radius: 15px;
-      text-align: center;
-      border: 1px solid #29345a;
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: #00c8ff;
-    }
-
-    .icon {
-      font-size: 35px;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      margin-bottom: 6px;
-    }
-
-    .card p {
-      color: #b9c2d9;
-      font-size: 13px;
+    input {
+      width: 100%;
+      max-width: 400px;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
     }
 
     button {
-      margin-top: 20px;
-      background: linear-gradient(90deg, #6c2cff, #00b7ff);
+      margin-top: 15px;
+      padding: 14px 35px;
       border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #6633ff, #00aaff);
       color: white;
-      padding: 12px 25px;
-      border-radius: 25px;
-      font-size: 16px;
+      font-size: 18px;
       cursor: pointer;
     }
 
     #message {
-      margin-top: 15px;
-      color: #00e1ff;
-      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
     }
 
-    footer {
-      text-align: center;
-      padding: 25px 10px;
-      color: #8e98b5;
-      font-size: 13px;
-    }
-
-    @media (max-width: 450px) {
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      header h1 {
-        font-size: 25px;
-      }
+    a {
+      color: #00aaff;
     }
   </style>
 </head>
@@ -128,56 +72,41 @@
 
   <header>
     <h1>🎮 Gaming FF Sports</h1>
-    <p>Free Fire Gaming & Sports Community</p>
+    <p>Join Our Gaming Community</p>
   </header>
 
-  <div class="container">
+  <div class="box">
+    <h2>🔥 Join Now</h2>
+    <p>Gaming FF Sports-এ যোগ দিতে নিচের তথ্য দাও</p>
 
-    <div class="welcome">
-      <h2>Welcome Gamer! 🔥</h2>
-      <p>Gaming FF Sports-এ তোমাকে স্বাগতম।</p>
-      <button onclick="showMessage()">Join Now</button>
-      <div id="message"></div>
-    </div>
+    <input type="text" id="name" placeholder="তোমার নাম">
+    <br>
 
-    <div class="cards">
+    <input type="text" id="uid" placeholder="Free Fire UID">
+    <br>
 
-      <div class="card">
-        <div class="icon">🎮</div>
-        <h3>Free Fire</h3>
-        <p>Gaming News & Updates</p>
-      </div>
+    <button onclick="joinNow()">Join Now</button>
 
-      <div class="card">
-        <div class="icon">🏆</div>
-        <h3>Tournament</h3>
-        <p>FF Tournament Info</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">⚽</div>
-        <h3>Sports</h3>
-        <p>Sports News & Scores</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🔥</div>
-        <h3>Highlights</h3>
-        <p>Gaming Highlights</p>
-      </div>
-
-    </div>
-
+    <div id="message"></div>
   </div>
 
-  <footer>
-    © 2026 Gaming FF Sports
-  </footer>
+  <p>
+    <a href="index.html">⬅️ Home এ ফিরে যাও</a>
+  </p>
 
   <script>
-    function showMessage() {
-      document.getElementById("message").innerHTML =
-        "🔥 Welcome to Gaming FF Sports!";
+    function joinNow() {
+      const name = document.getElementById("name").value.trim();
+      const uid = document.getElementById("uid").value.trim();
+      const message = document.getElementById("message");
+
+      if (name === "" || uid === "") {
+        message.innerHTML = "⚠️ নাম এবং Free Fire UID লিখো।";
+        return;
+      }
+
+      message.innerHTML =
+        "✅ ধন্যবাদ " + name + "! তোমার Join Request নেওয়া হয়েছে।";
     }
   </script>
 
